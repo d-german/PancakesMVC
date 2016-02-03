@@ -26,5 +26,14 @@ namespace PancakesMVC.Controllers
 
             return View();
         }
+
+        public ActionResult Pancakes()
+        {
+            ViewBag.Message = "How many pancakes?";
+
+            return View();
+        }
+
+
     }
 }
