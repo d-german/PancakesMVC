@@ -3,5 +3,22 @@
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
+<h2>How Many: <span data-bind="text: numPancakes"></span></h2>
+<button id="rectButton" type="button" class="btn btn-default">Click Me</button>
 
-<p>Use this area to provide additional information.</p>
+@section Scripts {
+    <script>
+        function ViewModel() {
+            this.numPancakes = '55';
+        };
+
+        var viewModel = new ViewModel();
+        ko.applyBindings(viewModel);
+
+        $('#rectButton').on('click', function(e) {
+            viewModel.numPancakes = '500';
+        });
+
+
+    </script>
+}
